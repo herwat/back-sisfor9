@@ -8,6 +8,7 @@
     margin-top: 0px;
     font-size: 48px;
     --color: white;
+    margin-bottom: 0px !important;
 }
 
 #toolbar-properties {
