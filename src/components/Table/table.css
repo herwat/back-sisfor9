@@ -1,0 +1,18 @@
+.myTable {
+    border: 1px solid rgba(81, 81, 81, .5);
+    font-style: italic;
+    font-weight: normal;
+    width: 30px;
+    height: 50px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+  }
+
+  .myTable.numberColumn {
+    width: 15px; 
+  }  
+
+  
+
