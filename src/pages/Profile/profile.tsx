@@ -43,7 +43,7 @@ const Profile: React.FC = () => {
     return (
       <IonPage>
       <IonHeader>
-        <Toolbar pageName='Pengaturan Profile' imageLink={""} />
+        <Toolbar pageName='Pengaturan Profile' imageLink='https://i.pinimg.com/564x/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg' />
       </IonHeader>
       <IonContent className="isi">
           <IonGrid>

@@ -11,9 +11,11 @@ interface ToolbarProps {
 interface PopoverProps {
     handleClick: () => void;
     image?: string;
+    name: string;
+    email: string;
 }
 
-const Popover: React.FC<PopoverProps> = ({ handleClick, image }) => {
+const Popover: React.FC<PopoverProps> = ({ handleClick, image, name, email }) => {
     return (
         <>
             <div id='popover-overlay' onClick={handleClick}></div>
@@ -25,10 +27,10 @@ const Popover: React.FC<PopoverProps> = ({ handleClick, image }) => {
                     <div id='popover-data-container' >
                         <img alt="Silhouette of mountains" src={image} style={{ borderRadius: '50%', height: 'auto', width: '65%' }} />
                         <IonCardHeader>
-                            <IonCardTitle className='popover-text-style'>Card Title</IonCardTitle>
-                            <IonCardSubtitle className='popover-text-style'>Card Subtitle</IonCardSubtitle>
+                            <IonCardTitle className='popover-text-style'>{name}</IonCardTitle>
+                            <IonCardSubtitle className='popover-text-style'>{email}</IonCardSubtitle>
                         </IonCardHeader>
-                        <IonButton className='popover-button-edit'>Edit</IonButton>
+                        <IonButton routerLink='/Profile' className='popover-button-edit'>Edit</IonButton>
                         <IonButton className='popover-button-keluar'>Keluar</IonButton>
                     </div>
                 </IonCard>
@@ -55,7 +57,7 @@ const Toolbar: React.FC<ToolbarProps> = (props) => {
                     <img onClick={handleClick} style={{ marginTop: '3px' }} src={props.imageLink} alt="Profile Picture" />
                 </IonAvatar>
             </IonToolbar>
-            {isOpen && <Popover handleClick={handleClick} image={props.imageLink} />}
+            {isOpen && <Popover handleClick={handleClick} image={props.imageLink} name='M Thezar' email='thezar@gmail.com'/>}
         </IonHeader>
     );
 };

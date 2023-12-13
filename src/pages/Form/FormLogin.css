@@ -101,3 +101,7 @@ body {
     width: 80%;
   }
 } */
+
+.native-input {
+  padding-left: 8px !important;
+}
