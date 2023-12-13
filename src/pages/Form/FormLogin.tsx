@@ -284,7 +284,7 @@ const FormMember: React.FC<FormMemberProps> = () => {
               <p className="Email">
                 <strong>Email Address/Username</strong>
               </p>
-              <IonInput
+              <IonInput className='input-login'
                 placeholder="  Email/Username"
                 style={{ border: '1px solid grey', width: '600px', height: '50px' }}
                 value={emailValue}
@@ -297,6 +297,7 @@ const FormMember: React.FC<FormMemberProps> = () => {
                 <strong>Password</strong>
               </p>
               <IonInput
+              className='input-login'
                 placeholder="  Password"
                 type="password"
                 style={{ border: '1px solid grey', width: '600px', height: '50px' }}
