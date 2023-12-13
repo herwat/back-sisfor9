@@ -51,7 +51,7 @@ body {
 .content {
   margin-top: 20px;
   margin-bottom: 40px;
-  max-height: 550px;
+  max-height: 800px;
 }
 
 .inputUsername,
@@ -95,12 +95,12 @@ body {
   justify-content: center;
 }
 
-/* Responsive Styles */
-/* @media only screen and (max-width: 600px) {
+/* Responsive Styles  */
+ @media only screen and (max-width: 600px) {
   .centered-card {
     width: 80%;
-  }
-} */
+}
+}
 
 .native-input {
   padding-left: 8px !important;

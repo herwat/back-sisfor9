@@ -189,7 +189,7 @@
 
 
 import React, { useState } from 'react';
-import { IonPage, IonCheckbox, IonCard, IonCardContent, IonCardHeader, IonTitle, IonCardTitle, IonInput, IonAlert, IonInfiniteScroll, IonInfiniteScrollContent } from '@ionic/react';
+import { IonPage, IonCheckbox, IonCard, IonCardContent, IonCardHeader, IonTitle, IonCardTitle, IonInput, IonAlert, IonInfiniteScroll } from '@ionic/react';
 import './FormLogin.css';
 import Buttons from '../../components/button/buttons';
 import Header from '../../components/header/Header';
@@ -262,8 +262,9 @@ const FormMember: React.FC<FormMemberProps> = () => {
   return (
     <IonPage className="form">
       <Header />
-
+      
       <IonCard className="centered-card">
+      <IonInfiniteScroll>
         <IonTitle className="judul">
           <h1>Sistem Informasi Penelitian dan Publikasi</h1>
         </IonTitle>
@@ -360,8 +361,8 @@ const FormMember: React.FC<FormMemberProps> = () => {
           <IonAlert
             isOpen={showAlert}
             onDidDismiss={() => setShowAlert(false)}
-            header="Login Success"
-            message="You have successfully logged in!"
+            header="Success"
+            message="You have successfully!"
             onClick={showAlertOnClick}
             buttons={['OK']}
           />
@@ -369,13 +370,15 @@ const FormMember: React.FC<FormMemberProps> = () => {
           <IonAlert
             isOpen={alertWrong}
             onDidDismiss={() => setAlertWrong(false)}
-            header="Login Failed"
-            message="An error occurred while logged in!"
+            header="Failed"
+            message="oow,error!"
             buttons={['OK']}
           />
 
         </div>
+        </IonInfiniteScroll>
       </IonCard>
+    
     </IonPage>
   );
 };
