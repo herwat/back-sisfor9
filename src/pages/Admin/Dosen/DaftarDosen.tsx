@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import {IonHeader} from '@ionic/react';
 import ToolbarAdmin from '../../../components/toolbar/toolbarAdmin';
 import MenuSlideAdmin from '../../../components/menu-Slide/menuSlideAdmin';
+import './DaftarDosen.css';
 import {
     MaterialReactTable,
     useMaterialReactTable,

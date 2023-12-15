@@ -1,107 +1,113 @@
 body {
-  background-color: #E0F4FF;
-  font-family: 'Merriweather Sans', sans-serif;
+    background-color: #E0F4FF;
+    font-family: 'Merriweather Sans', sans-serif;
 }
 
 .form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .centered-card {
-  /* width: 90%; */
-  height: 700px;
-  max-width: 650px;
-  /* max-height: max-content; */
-  margin-top: 30px;
-  margin-bottom: 30px;
-  padding: 10px;
-  align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 700px;
+    max-width: 650px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 10px;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .judul {
-  text-align: center;
+    text-align: center;
 }
 
 .custom-ion-title {
-  color: #333;
+    color: #333;
 }
 
 .pictlogo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 150px;
-  max-height: 200px;
-  height: auto;
-  margin: 10px auto; /* Adjust margin for vertical centering */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 150px;
+    max-height: 200px;
+    height: auto;
+    margin: 10px auto;
+    /* Adjust margin for vertical centering */
 }
 
 .header {
-  text-align: center;
+    text-align: center;
 }
 
 .tittle {
-  font-size: 1.2em;
+    font-size: 1.2em;
 }
 
 .content {
-  margin-top: 20px;
-  margin-bottom: 40px;
-  max-height: 800px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    max-height: 800px;
 }
 
 .inputUsername,
 .inputPass {
-  width: 100%;
-  height: 50px;
-  border: 1px solid grey;
-  margin-bottom: 10px;
+    width: 100%;
+    height: 50px;
+    border: 1px solid grey;
+    margin-bottom: 10px;
 }
 
 .password {
-  margin-top: 10px;
+    margin-top: 10px;
 }
 
 .ready,
 .already {
-  text-align: left;
-  margin-top: 10px;
+    text-align: left;
+    margin-top: 10px;
 }
 
 .button {
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .rememberme {
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
 }
 
 .register-link {
-  text-align: left; /* Align text to the left */
-  margin-top: 10px;
+    text-align: left;
+    /* Align text to the left */
+    margin-top: 10px;
 }
 
 .alert-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+
 /* Responsive Styles  */
- @media only screen and (max-width: 600px) {
-  .centered-card {
-    width: 80%;
-}
+
+@media only screen and (max-width: 600px) {
+    .centered-card {
+        width: 80%;
+    }
 }
 
 .native-input {
-  padding-left: 8px !important;
+    padding-left: 8px !important;
 }
