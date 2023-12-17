@@ -8,12 +8,13 @@ import {
   IonInput,
   IonAlert,
   IonCheckbox,
+  IonTitle,
 } from '@ionic/react';
 import Buttons from '../../components/button/buttons';
 import { useHistory } from 'react-router-dom';
 import './LoginAdmin.css'
 
-interface FormAdminProps {}
+interface FormAdminProps { }
 
 const FormAdmin: React.FC<FormAdminProps> = () => {
   const [showAlert, setShowAlert] = useState<boolean>(false);
@@ -27,16 +28,16 @@ const FormAdmin: React.FC<FormAdminProps> = () => {
   };
 
   const handleAdminLogin = () => {
-    const username = 'admin'; 
-    const password = 'password123'; 
+    const username = 'admin';
+    const password = 'password123';
 
     if (usernameInput === username && passwordInput === password) {
-      
+
       history.push('/Admin');
     } else {
-    
+
       console.error('Username atau password salah');
-      setShowAlert(true); 
+      setShowAlert(true);
     }
   };
 
@@ -47,8 +48,6 @@ const FormAdmin: React.FC<FormAdminProps> = () => {
 
   return (
     <IonPage className="formAdmin">
-      <IonCard className="juduLAdmin">
-      </IonCard>
       <IonCard className="centered-card-Admin">
         <div className="login-container-Admin">
           <div>
@@ -71,7 +70,6 @@ const FormAdmin: React.FC<FormAdminProps> = () => {
                 />
               </div>
               <div>
-                <br />
                 <p className="passwordAdmin">
                   <strong>Password</strong>
                 </p>
@@ -114,6 +112,9 @@ const FormAdmin: React.FC<FormAdminProps> = () => {
               message="Password atau username yang di masukkan invalid"
               buttons={['OK']}
             />
+          </div>
+          <div className='imageAdmin'>
+            <img src="https://png.pngtree.com/png-vector/20221124/ourmid/pngtree-recruitment-job-for-social-media-admin-png-image_6478542.png" />
           </div>
         </div>
       </IonCard>
