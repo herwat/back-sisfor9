@@ -31,7 +31,7 @@ const Popover: React.FC<PopoverProps> = ({ handleClick, image, name, email }) =>
                             <IonCardSubtitle className='popover-text-style'>{email}</IonCardSubtitle>
                         </IonCardHeader>
                         <IonButton routerLink='/Profile' className='popover-button-edit'>Edit</IonButton>
-                        <IonButton routerLink='/home' className='popover-button-keluar'>keluar</IonButton>
+                        <IonButton routerLink='/login' className='popover-button-keluar'>keluar</IonButton>
                     </div>
                 </IonCard>
             </div >
@@ -57,7 +57,7 @@ const Toolbar: React.FC<ToolbarProps> = (props) => {
                     <img onClick={handleClick} style={{ marginTop: '3px' }} src={props.imageLink} alt="Profile Picture" />
                 </IonAvatar>
             </IonToolbar>
-            {isOpen && <Popover handleClick={handleClick} image={props.imageLink} name='M Thezar' email='thezar@gmail.com'/>}
+            {isOpen && <Popover handleClick={handleClick} image={props.imageLink} name='M Thezar' email='thezar@gmail.com' />}
         </IonHeader>
     );
 };
@@ -65,4 +65,3 @@ const Toolbar: React.FC<ToolbarProps> = (props) => {
 export default Toolbar;
 
 
- 
