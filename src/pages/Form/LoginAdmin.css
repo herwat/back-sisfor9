@@ -4,6 +4,7 @@
   justify-content: left;
   align-items: start;
   width: 60%;
+  border-radius: 8px;
 }
 
 .login-container-Admin {
@@ -15,8 +16,6 @@
   height: fit-content;
   padding-left: 24px;
   padding-right: 24px;
-  border-radius: 8px;
-
 }
 
 .formAdmin {
