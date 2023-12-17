@@ -24,7 +24,7 @@ const Publikasi: React.FC = () => {
     if (newDoc == null || newAuthor == "" || Number(newYear) === 0 || newTitle == "") return;
     setIsLoading(true);
     try {
-      await addDoc(userCollectionRef, { author: newAuthor, year: newYear, title: newTitle, tags: newTags });
+      await addDoc(userCollectionRef, { authors: newAuthor, year: newYear, title: newTitle, tags: newTags });
       const docRef = ref(storage, `documents/${newAuthor + "-" + newTitle}`);
       await uploadBytes(docRef, newDoc);
       alert("Dokumen Terupload");
@@ -64,7 +64,7 @@ const Publikasi: React.FC = () => {
               <h1 style={{ width: '100%', textAlign: 'center', fontWeight: "500", margin: '0px' }}>UNGGAH DOKUMEN</h1>
             </div>
             <div className='input-container'>
-              <p className='labels'>Author <span style={{ color: 'rgb(223, 66, 66)', fontSize: '12px !important' }}>*</span></p>
+              <p className='labels'>Authors <span style={{ color: 'rgb(223, 66, 66)', fontSize: '12px !important' }}>*</span></p>
               <input className='input-box' value={newAuthor} onChange={(e) => setNewAuthor(e.target.value)} type="text" placeholder="  Masukkan nama-nama penulis..." />
             </div>
             <div className='input-container'>
