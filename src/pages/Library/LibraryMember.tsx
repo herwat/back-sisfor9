@@ -28,8 +28,8 @@ const Example = () => {
 
   const columns = useMemo<MRT_ColumnDef<User>[]>(
     () => [
-     
-            {
+
+      {
         accessorKey: 'authors',
         header: 'authors',
         enableEditing: false,
@@ -53,8 +53,8 @@ const Example = () => {
         },
       },
       {
-        accessorKey: 'tittle',
-        header: 'tittle',
+        accessorKey: 'title',
+        header: 'title',
         muiEditTextFieldProps: {
           type: 'email',
           required: true,
@@ -64,23 +64,23 @@ const Example = () => {
           onFocus: () =>
             setValidationErrors({
               ...validationErrors,
-              tittle: undefined,
+              title: undefined,
             }),
         },
       },
       {
-        accessorKey: 'tag',
-        header: 'tag',
+        accessorKey: 'tags',
+        header: 'tags',
         muiEditTextFieldProps: {
           type: 'email',
           required: true,
-          error: !!validationErrors?.tag,
-          helperText: validationErrors?.tag,
+          error: !!validationErrors?.tags,
+          helperText: validationErrors?.tags,
           //remove any previous validation errors when user focuses on the input
           onFocus: () =>
             setValidationErrors({
               ...validationErrors,
-              tag: undefined,
+              tags: undefined,
             }),
         },
       },
@@ -307,8 +307,8 @@ function validateUser(user: User) {
     year: !validateRequired(user.year)
       ? 'year is Required'
       : '',
-    tittle: !validateRequired(user.tittle) ? 'tittle is Required' : '',
-    tag: !validateRequired(user.tag) ? 'Incorrect tag Format' : '',
+    title: !validateRequired(user.title) ? 'title is Required' : '',
+    tags: !validateRequired(user.tags) ? 'Incorrect tags Format' : '',
   };
 }
 
