@@ -14,8 +14,8 @@ import React from 'react';
   const columnHelper = createMRTColumnHelper<Person>();
   
   const columns = [
-    columnHelper.accessor('Mahasiswa', {
-      header: 'Mahasiswa',
+    columnHelper.accessor('Tamu', {
+      header: 'Tamu',
       size: 120,
     }),
     columnHelper.accessor('WaktuAkses', {
