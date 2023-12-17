@@ -96,7 +96,7 @@ const FormAdmin: React.FC<FormAdminProps> = () => {
             <IonAlert
               isOpen={showAlert}
               onDidDismiss={() => setShowAlert(false)}
-              header={isLogin ? 'Login Success' : 'Admin Login uccess'}
+              header={isLogin ? 'Login Success' : 'Admin Login ccess'}
               message={isLogin ? 'You have successfully logged in!' : 'Admin login successful!'}
               buttons={['OK']}
             />
