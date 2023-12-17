@@ -5,18 +5,15 @@ import { useMemo, useState } from 'react';
 import {
   MaterialReactTable,
   type MRT_ColumnDef,
-  type MRT_Row,
-  type MRT_TableOptions,
   useMaterialReactTable,
 } from 'material-react-table';
 import {
   QueryClient,
   QueryClientProvider,
-  useMutation,
   useQuery,
-  useQueryClient,
 } from '@tanstack/react-query';
 import { type User, fakeData } from './makeData';
+import './Library.css';
 
 const Example = () => {
 
@@ -64,12 +61,13 @@ const Example = () => {
   return (
     <>
       <MenuSlideGuest></MenuSlideGuest>
-      <IonPage id='main-content'>
+      <IonPage id='main-content' className="LibraryTamu">
         <IonHeader className="Fav">
           <ToolbarTamu pageName='Perpustakaan' imageLink='https://i.pinimg.com/564x/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg' />
         </IonHeader>
-
+        <div style={{ height: '900px' }}> 
         <MaterialReactTable table={table} />;
+        </div>
       </IonPage>
     </>
   )
@@ -91,7 +89,6 @@ function useGetUsers() {
 const queryClient = new QueryClient();
 
 const ExampleWithProviders = () => (
-  //Put this with your other react-query providers near root of your app
   <QueryClientProvider client={queryClient}>
     <Example />
   </QueryClientProvider>

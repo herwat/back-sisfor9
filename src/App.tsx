@@ -31,7 +31,7 @@ import Setting from './pages/Setting';
 import Library from './pages/Library/Library';
 import LibraryMember from './pages/Library/LibraryMember';
 import HalamanAwal from './pages/tampilanawal/HalamanAwal';
-// import FormRegis from './pages/Form/FormRegis';
+import LoginAdmin from './pages/Form/LoginAdmin';
 import Trash from './pages/Trash/Trash';
 import PublikasiFile from './pages/publikasi/PublikasiFile';
 import Profile from './pages/Profile/profile';
@@ -46,6 +46,7 @@ import DataNotif from './pages/Admin/Pemberitahuan/DaftarNotif';
 
 
 
+
 setupIonicReact();
 
 const App: React.FC = () => (
@@ -56,7 +57,7 @@ const App: React.FC = () => (
         <Route exact path="/home" component={Home} />
         <Route exact path="/halamantamu" component={PageTamu} />
         <Route exact path="/formMember" component={FormLogin} />
-        {/* <Route exact path="/formMember" component={FormRegis} /> */}
+        <Route exact path="/formAdmin" component={LoginAdmin} />
         <Route exact path="/bacananti" component={Bacananti} />
         <Route exact path="/favorit" component={FavCol} />
         <Route exact path="/baruSajaDibaca" component={barubaca} />

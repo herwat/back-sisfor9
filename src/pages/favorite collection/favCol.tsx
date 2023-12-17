@@ -1,4 +1,4 @@
-import { IonButtons, IonHeader, IonMenuButton, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButtons, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import Toolbar from '../../components/toolbar/toolbar';
 import MenuSlide from '../../components/menu-Slide/menuSlide';
 import React from 'react';
@@ -22,6 +22,7 @@ import {
 import { type User, fakeData } from './makeData';
 // import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
+import './favCol.css';
 
 
 const Example = () => {
@@ -104,22 +105,6 @@ const Example = () => {
         },
       },
 
-      {
-        accessorKey: 'file',
-        header: 'file',
-        muiEditTextFieldProps: {
-          type: 'email',
-          required: true,
-          error: !!validationErrors?.file,
-          helperText: validationErrors?.file,
-          //remove any previous validation errors when user focuses on the input
-          onFocus: () =>
-            setValidationErrors({
-              ...validationErrors,
-              file: undefined,
-            }),
-        },
-      },
      
     ],
     [validationErrors],
@@ -207,7 +192,6 @@ const Example = () => {
       <Box sx={{ display: 'flex', gap: '1rem' }}>
         <Tooltip title="Edit">
           <IconButton onClick={() => table.setEditingRow(row)}>
-            {/* For Admin <EditIcon /> */}
           </IconButton>
         </Tooltip>
         <Tooltip title="Delete">
@@ -223,11 +207,14 @@ const Example = () => {
   return (
     <>
       <MenuSlide></MenuSlide>
+      <IonPage className="favorite">
       <IonHeader className="Fav">
         <Toolbar pageName='Favorit' imageLink='https://i.pinimg.com/564x/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg' />
       </IonHeader>
-    
-      <MaterialReactTable table={table} />;
+      <div style={{ height: '900px' }}> 
+        <MaterialReactTable table={table} />;
+        </div>
+      </IonPage>
     </>
   )
 };
@@ -344,7 +331,6 @@ function validateUser(user: User) {
     tittle: !validateRequired(user.tittle) ? 'tittle is Required' : '',
     tag: !validateRequired(user.tag) ? 'Incorrect tag Format' : '',
     added: !validateRequired(user.added) ? 'Incorrect added Format' : '',
-    file: !validateRequired(user.file) ? 'Incorrect file Format' : '',
   };
 }
 

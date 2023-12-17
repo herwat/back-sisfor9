@@ -1,4 +1,4 @@
-import { IonButtons, IonHeader, IonMenuButton, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButtons, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import Toolbar from '../../components/toolbar/toolbar';
 import MenuSlide from '../../components/menu-Slide/menuSlide';
 import './BarudiBaca.css'
@@ -51,11 +51,12 @@ const barubaca = () => {
   return (
     <>
       <MenuSlide></MenuSlide>
+      <IonPage className="reading">
       <IonHeader className="read">
         <Toolbar pageName='Baru dibaca' imageLink='https://i.pinimg.com/564x/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg' />
       </IonHeader>
-     
       <MaterialReactTable table={table} />;
+      </IonPage>
     </>
   )
 };

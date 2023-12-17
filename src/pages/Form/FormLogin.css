@@ -10,15 +10,17 @@ body {
 }
 
 .centered-card {
-  /* width: 90%; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   height: 700px;
   max-width: 650px;
-  /* max-height: max-content; */
   margin-top: 30px;
   margin-bottom: 30px;
   padding: 10px;
   align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .judul {
@@ -37,7 +39,8 @@ body {
   max-width: 150px;
   max-height: 200px;
   height: auto;
-  margin: 10px auto; /* Adjust margin for vertical centering */
+  margin: 10px auto;
+  /* Adjust margin for vertical centering */
 }
 
 .header {
@@ -85,7 +88,8 @@ body {
 }
 
 .register-link {
-  text-align: left; /* Align text to the left */
+  text-align: left;
+  /* Align text to the left */
   margin-top: 10px;
 }
 
@@ -95,11 +99,13 @@ body {
   justify-content: center;
 }
 
+
 /* Responsive Styles  */
- @media only screen and (max-width: 600px) {
+
+@media only screen and (max-width: 600px) {
   .centered-card {
-    width: 80%;
-}
+      width: 80%;
+  }
 }
 
 .native-input {

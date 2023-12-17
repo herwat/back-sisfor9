@@ -25,11 +25,9 @@ const Popover: React.FC<PopoverProps> = ({ handleClick, image }) => {
                     <div id='popover-data-container' >
                         <img alt="Silhouette of mountains" src={image} style={{ borderRadius: '50%', height: 'auto', width: '65%' }} />
                         <IonCardHeader>
-                            <IonCardTitle className='popover-text-style'>Card Title</IonCardTitle>
-                            <IonCardSubtitle className='popover-text-style'>Card Subtitle</IonCardSubtitle>
+                            <IonCardTitle className='popover-text-style'>Guest</IonCardTitle>
                         </IonCardHeader>
-                        <IonButton className='popover-button-edit'>Edit</IonButton>
-                        <IonButton className='popover-button-keluar'>Keluar</IonButton>
+                        <IonButton  routerLink='/Login' className='popover-button-keluar'>Keluar</IonButton>
                     </div>
                 </IonCard>
             </div >

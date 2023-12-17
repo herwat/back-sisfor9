@@ -1,18 +1,16 @@
-import { IonButtons, IonHeader, IonMenuButton, IonTitle, IonToolbar } from '@ionic/react';
+import { IonHeader, IonPage } from '@ionic/react';
 import Toolbar from '../../components/toolbar/toolbar';
 import MenuSlide from '../../components/menu-Slide/menuSlide';
-import './LibraryMember.css'
 import React from 'react';
 import { useMemo, useState } from 'react';
 import {
   MaterialReactTable,
-  // createRow,
   type MRT_ColumnDef,
   type MRT_Row,
   type MRT_TableOptions,
   useMaterialReactTable,
 } from 'material-react-table';
-import { Box, Button, IconButton, Tooltip } from '@mui/material';
+import { Box, IconButton, Tooltip } from '@mui/material';
 import {
   QueryClient,
   QueryClientProvider,
@@ -20,8 +18,8 @@ import {
   useQuery,
   useQueryClient,
 } from '@tanstack/react-query';
-import { type User, fakeData } from './makeData';
-
+import { type User, fakeData } from './makeDataa';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const Example = () => {
   const [validationErrors, setValidationErrors] = useState<
@@ -30,7 +28,8 @@ const Example = () => {
 
   const columns = useMemo<MRT_ColumnDef<User>[]>(
     () => [
-      {
+     
+            {
         accessorKey: 'authors',
         header: 'authors',
         enableEditing: false,
@@ -100,9 +99,11 @@ const Example = () => {
     isFetching: isFetchingUsers,
     isLoading: isLoadingUsers,
   } = useGetUsers();
+
   //call UPDATE hook
   const { mutateAsync: updateUser, isPending: isUpdatingUser } =
     useUpdateUser();
+
   //call DELETE hook
   const { mutateAsync: deleteUser, isPending: isDeletingUser } =
     useDeleteUser();
@@ -119,7 +120,7 @@ const Example = () => {
     }
     setValidationErrors({});
     await createUser(values);
-    table.setCreatingRow(null); //exit creating mode
+    table.setCreatingRow(null);
   };
 
   //UPDATE action
@@ -134,12 +135,12 @@ const Example = () => {
     }
     setValidationErrors({});
     await updateUser(values);
-    table.setEditingRow(null); //exit editing mode
+    table.setEditingRow(null);
   };
 
   //DELETE action
   const openDeleteConfirmModal = (row: MRT_Row<User>) => {
-    if (window.confirm('Are you sure you want to delete this user?')) {
+    if (window.confirm('Hapus Selamanya?')) {
       deleteUser(row.original.authors);
     }
   };
@@ -147,8 +148,8 @@ const Example = () => {
   const table = useMaterialReactTable({
     columns,
     data: fetchedUsers,
-    createDisplayMode: 'row', // ('modal', and 'custom' are also available)
-    editDisplayMode: 'row', // ('modal', 'cell', 'table', and 'custom' are also available)
+    createDisplayMode: 'row',
+    editDisplayMode: 'row',
     enableEditing: true,
     enableRowActions: true,
     positionActionsColumn: 'last',
@@ -168,17 +169,31 @@ const Example = () => {
     onCreatingRowSave: handleCreateUser,
     onEditingRowCancel: () => setValidationErrors({}),
     onEditingRowSave: handleSaveUser,
-
+    renderRowActions: ({ row, table }) => (
+      <Box sx={{ display: 'flex', gap: '1rem' }}>
+        <Tooltip title="Edit">
+          <IconButton onClick={() => table.setEditingRow(row)}>
+            {/* For Admin <EditIcon /> */}
+          </IconButton>
+        </Tooltip>
+        <Tooltip title="Delete">
+          <IconButton color="error" onClick={() => openDeleteConfirmModal(row)}>
+            <DeleteIcon />
+          </IconButton>
+        </Tooltip>
+      </Box>
+    ),
   });
 
   return (
     <>
       <MenuSlide></MenuSlide>
-      <IonHeader className="Fav">
-        <Toolbar pageName='Perpustakaan' imageLink='https://i.pinimg.com/564x/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg' />
-      </IonHeader>
-     
-      <MaterialReactTable table={table} />;
+      <IonPage id='main-content' className="perpustakaan">
+        <IonHeader className="perpus">
+          <Toolbar pageName='Perpustakaan' imageLink='https://i.pinimg.com/564x/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg' />
+        </IonHeader>
+        <MaterialReactTable table={table} />;
+      </IonPage>
     </>
   )
 };
@@ -294,8 +309,6 @@ function validateUser(user: User) {
       : '',
     tittle: !validateRequired(user.tittle) ? 'tittle is Required' : '',
     tag: !validateRequired(user.tag) ? 'Incorrect tag Format' : '',
-    // added: !validateRequired(user.added) ? 'Incorrect added Format' : '',
-    // file: !validateRequired(user.file) ? 'Incorrect file Format' : '',
   };
 }
 

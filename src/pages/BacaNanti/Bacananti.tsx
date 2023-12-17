@@ -1,6 +1,6 @@
 // Import komponen-komponen yang diperlukan
 import React, { useMemo } from 'react';
-import {IonHeader,IonButtons,IonMenuButton,IonTitle} from '@ionic/react';
+import {IonHeader,IonButtons,IonMenuButton,IonTitle, IonPage} from '@ionic/react';
 import Toolbar from '../../components/toolbar/toolbar';
 import MenuSlide from '../../components/menu-Slide/menuSlide';
 import './Bacananti.css';
@@ -57,18 +57,13 @@ const Bacananti: React.FC<BacanantiProps> = () => {
 
   return (
     <>
-     
       <MenuSlide></MenuSlide>
-
-      
-      <IonHeader className="read">
-        <Toolbar
-          pageName="Baca Nanti"
-          imageLink="https://i.pinimg.com/564x/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg"
-        />
+      <IonPage className="see">
+      <IonHeader className="bacananti">
+        <Toolbar pageName='Baru Nanti' imageLink='https://i.pinimg.com/564x/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg' />
       </IonHeader>
-
-      <MaterialReactTable table={table} />
+      <MaterialReactTable table={table} />;
+      </IonPage>
     </>
   );
 };
