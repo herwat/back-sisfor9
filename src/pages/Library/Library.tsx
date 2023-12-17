@@ -1,24 +1,44 @@
 import { IonHeader, IonPage } from '@ionic/react';
 import ToolbarTamu from '../../components/toolbar/toolbarGuest';
 import MenuSlideGuest from '../../components/menu-Slide/menuSlideGuest';
-import { useMemo, useState } from 'react';
+import { db } from '../firebase/firebase';
+import { collection, getDocs } from 'firebase/firestore';
+import { useEffect, useMemo, useState } from 'react';
 import {
   MaterialReactTable,
   type MRT_ColumnDef,
-  type MRT_Row,
-  type MRT_TableOptions,
   useMaterialReactTable,
 } from 'material-react-table';
 import {
   QueryClient,
   QueryClientProvider,
-  useMutation,
   useQuery,
-  useQueryClient,
 } from '@tanstack/react-query';
 import { type User, fakeData } from './makeData';
 
 const Example = () => {
+  type DocType = {
+    authors: string;
+    year: string;
+    title: string;
+    tags: string;
+  }
+  const [users, setUsers] = useState<DocType[]>([])
+  const docsCollectionRef = collection(db, "documents")
+
+  useEffect(() => {
+    const getUsers = async () => {
+      const data = await getDocs(docsCollectionRef);
+      setUsers(data.docs.map((doc) => ({
+        authors: doc.data().authors,
+        year: doc.data().year,
+        title: doc.data().title,
+        tags: doc.data().tags
+      })));
+    }
+
+    getUsers()
+  }, [])
 
   const columns = useMemo<MRT_ColumnDef<User>[]>(
     () => [
@@ -33,15 +53,13 @@ const Example = () => {
         header: 'year',
       },
       {
-        accessorKey: 'tittle',
-        header: 'tittle',
+        accessorKey: 'title',
+        header: 'title',
       },
       {
-        accessorKey: 'tag',
-        header: 'tag',
+        accessorKey: 'tags',
+        header: 'tags',
       },
-
-
     ],
     [],
   );
@@ -68,6 +86,15 @@ const Example = () => {
         <IonHeader className="Fav">
           <ToolbarTamu pageName='Perpustakaan' imageLink='https://i.pinimg.com/564x/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg' />
         </IonHeader>
+        <div>
+          {users.map((user) => {
+            return (
+              <div>
+                <h6>Author: {user.authors}</h6>
+              </div>
+            )
+          })}
+        </div>
 
         <MaterialReactTable table={table} />;
       </IonPage>

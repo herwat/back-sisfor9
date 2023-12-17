@@ -54,8 +54,8 @@ const Example = () => {
         },
       },
       {
-        accessorKey: 'tittle',
-        header: 'tittle',
+        accessorKey: 'title',
+        header: 'title',
         muiEditTextFieldProps: {
           type: 'email',
           required: true,
@@ -65,23 +65,23 @@ const Example = () => {
           onFocus: () =>
             setValidationErrors({
               ...validationErrors,
-              tittle: undefined,
+              title: undefined,
             }),
         },
       },
       {
-        accessorKey: 'tag',
-        header: 'tag',
+        accessorKey: 'tags',
+        header: 'tags',
         muiEditTextFieldProps: {
           type: 'email',
           required: true,
-          error: !!validationErrors?.tag,
-          helperText: validationErrors?.tag,
+          error: !!validationErrors?.tags,
+          helperText: validationErrors?.tags,
           //remove any previous validation errors when user focuses on the input
           onFocus: () =>
             setValidationErrors({
               ...validationErrors,
-              tag: undefined,
+              tags: undefined,
             }),
         },
       },
@@ -177,7 +177,7 @@ const Example = () => {
       <IonHeader className="Fav">
         <Toolbar pageName='Perpustakaan' imageLink='https://i.pinimg.com/564x/83/bc/8b/83bc8b88cf6bc4b4e04d153a418cde62.jpg' />
       </IonHeader>
-     
+
       <MaterialReactTable table={table} />;
     </>
   )
@@ -292,8 +292,8 @@ function validateUser(user: User) {
     year: !validateRequired(user.year)
       ? 'year is Required'
       : '',
-    tittle: !validateRequired(user.tittle) ? 'tittle is Required' : '',
-    tag: !validateRequired(user.tag) ? 'Incorrect tag Format' : '',
+    title: !validateRequired(user.title) ? 'title is Required' : '',
+    tags: !validateRequired(user.tags) ? 'Incorrect tags Format' : '',
     // added: !validateRequired(user.added) ? 'Incorrect added Format' : '',
     // file: !validateRequired(user.file) ? 'Incorrect file Format' : '',
   };
