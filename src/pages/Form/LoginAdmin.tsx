@@ -8,17 +8,17 @@ import {
   IonInput,
   IonAlert,
   IonCheckbox,
-  IonTitle,
 } from '@ionic/react';
 import Buttons from '../../components/button/buttons';
 import { useHistory } from 'react-router-dom';
-import './LoginAdmin.css'
 
-interface FormAdminProps { }
+interface FormAdminProps {}
 
 const FormAdmin: React.FC<FormAdminProps> = () => {
   const [showAlert, setShowAlert] = useState<boolean>(false);
   const [isLogin, setIsLogin] = useState<boolean>(true); // Set default to login
+  const [usernameInput, setUsernameInput] = useState<string>('');
+  const [passwordInput, setPasswordInput] = useState<string>('');
   const history = useHistory();
 
   const handleLogin = () => {
@@ -26,9 +26,17 @@ const FormAdmin: React.FC<FormAdminProps> = () => {
   };
 
   const handleAdminLogin = () => {
-    // Implement admin login logic here
-    // For now, let's just show the same alert as a regular login
-    setShowAlert(true);
+    const username = 'admin'; 
+    const password = 'password123'; 
+
+    if (usernameInput === username && passwordInput === password) {
+      
+      history.push('/Admin');
+    } else {
+    
+      console.error('Username atau password salah');
+      setShowAlert(true); 
+    }
   };
 
   const showAlertOnClick = () => {
@@ -38,13 +46,15 @@ const FormAdmin: React.FC<FormAdminProps> = () => {
 
   return (
     <IonPage className="formAdmin">
+      <IonCard className="juduLAdmin">
+      </IonCard>
       <IonCard className="centered-card-Admin">
         <div className="login-container-Admin">
-          <div className='form-admin'>
+          <div>
             <IonCardHeader className="headerAdmin">
               <p>
                 <IonCardTitle className="tittleAdmin">
-                  <strong>Admin Login</strong>
+                  <strong>{isLogin ? 'Login' : 'Admin Login'}</strong>
                 </IonCardTitle>
               </p>
             </IonCardHeader>
@@ -55,17 +65,20 @@ const FormAdmin: React.FC<FormAdminProps> = () => {
                 </p>
                 <IonInput
                   placeholder=" Email/Username"
-                  style={{ border: '1px solid grey', width: '100%', height: '50px' }}
+                  style={{ border: '1px solid grey', width: '500px', height: '50px' }}
+                  onIonChange={(e) => setUsernameInput(e.detail.value!)}
                 />
               </div>
               <div>
-                <p className="passwordAdmin" style={{ marginTop: '8px' }}>
+                <br />
+                <p className="passwordAdmin">
                   <strong>Password</strong>
                 </p>
                 <IonInput
                   placeholder=" Password"
                   type="password"
-                  style={{ border: '1px solid grey', width: '100%', height: '50px' }}
+                  style={{ border: '1px solid grey', width: '500px', height: '50px' }}
+                  onIonChange={(e) => setPasswordInput(e.detail.value!)}
                 />
               </div>
               {isLogin && (
@@ -79,7 +92,7 @@ const FormAdmin: React.FC<FormAdminProps> = () => {
                   maxWidth={isLogin ? '70px' : '100px'}
                   fillType="solid"
                   shape="round"
-                  onClick={isLogin ? showAlertOnClick : handleAdminLogin}
+                  onClick={handleAdminLogin}
                   style={{ width: '100%' }}
                 />
               </p>
@@ -96,13 +109,10 @@ const FormAdmin: React.FC<FormAdminProps> = () => {
             <IonAlert
               isOpen={showAlert}
               onDidDismiss={() => setShowAlert(false)}
-              header={isLogin ? 'Login Success' : 'Admin Login Success'}
-              message={isLogin ? 'You have successfully logged in!' : 'Admin login successful!'}
+              header="Terjadi Kesalahan!"
+              message="Password atau username yang di masukkan invalid"
               buttons={['OK']}
             />
-          </div>
-          <div className='imageAdmin'>
-            <img src="https://png.pngtree.com/png-vector/20221124/ourmid/pngtree-recruitment-job-for-social-media-admin-png-image_6478542.png" />
           </div>
         </div>
       </IonCard>
