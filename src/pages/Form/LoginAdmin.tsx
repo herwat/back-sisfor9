@@ -11,6 +11,7 @@ import {
 } from '@ionic/react';
 import Buttons from '../../components/button/buttons';
 import { useHistory } from 'react-router-dom';
+import './LoginAdmin.css'
 
 interface FormAdminProps {}
 
