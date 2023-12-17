@@ -51,7 +51,6 @@ const FormMember: React.FC<FormMemberProps> = () => {
   };
 
   const showAlertOnClick = () => {
-    setShowAlert(true);
     history.push('/home');
 
     if (isRegister) {
@@ -62,11 +61,6 @@ const FormMember: React.FC<FormMemberProps> = () => {
       // Implement your reminder logic here
       console.log('Reminder activated!');
     }
-  };
-
-  const handleRegisterButtonClick = () => {
-    // Navigate to the card login page
-    history.push('/cardLogin'); // Replace with the actual path
   };
 
   return (

@@ -28,8 +28,8 @@ const FormAdmin: React.FC<FormAdminProps> = () => {
   };
 
   const handleAdminLogin = () => {
-    const username = 'admin';
-    const password = 'password123';
+    const username = 'Mentari';
+    const password = '12345';
 
     if (usernameInput === username && passwordInput === password) {
 
@@ -96,7 +96,7 @@ const FormAdmin: React.FC<FormAdminProps> = () => {
                 />
               </p>
             </IonCardContent>
-            {isLogin && (
+            {/* {isLogin && (
               <p className="readyAdmin">
                 <br />
                 Don't have an account?{' '}
@@ -104,7 +104,7 @@ const FormAdmin: React.FC<FormAdminProps> = () => {
                   Register here
                 </a>
               </p>
-            )}
+            )} */}
             <IonAlert
               isOpen={showAlert}
               onDidDismiss={() => setShowAlert(false)}
@@ -114,7 +114,7 @@ const FormAdmin: React.FC<FormAdminProps> = () => {
             />
           </div>
           <div className='imageAdmin'>
-            <img src="https://png.pngtree.com/png-vector/20221124/ourmid/pngtree-recruitment-job-for-social-media-admin-png-image_6478542.png" />
+            <img src="https://png.pngtree.com/png-vector/20221124/ourmid/pngtree-recruitment-job-for-social-media-admin-png-image_6478542.png" alt=''/>
           </div>
         </div>
       </IonCard>

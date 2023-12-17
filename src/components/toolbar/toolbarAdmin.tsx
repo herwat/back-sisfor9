@@ -28,8 +28,8 @@ const Popover: React.FC<PopoverProps> = ({ handleClick, image }) => {
                             <IonCardTitle className='popover-text-style'>Card Title</IonCardTitle>
                             <IonCardSubtitle className='popover-text-style'>Card Subtitle</IonCardSubtitle>
                         </IonCardHeader>
-                        <IonButton className='popover-button-edit'>Edit</IonButton>
-                        <IonButton className='popover-button-keluar'>Keluar</IonButton>
+                        <IonButton  routerLink='/profile' className='popover-button-keluar'>edit</IonButton>
+                        <IonButton  routerLink='/Login' className='popover-button-keluar'>Keluar</IonButton>
                     </div>
                 </IonCard>
             </div >

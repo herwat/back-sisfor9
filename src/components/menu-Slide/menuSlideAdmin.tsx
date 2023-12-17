@@ -35,7 +35,7 @@ function MenuSlideAdmin() {
                          buttonName="log out" 
                          fillType= "solid" 
                          shape= "round" 
-                         path= "formMember"
+                         path= "formAdmin"
                          />
                     </div> 
                 </IonContent>

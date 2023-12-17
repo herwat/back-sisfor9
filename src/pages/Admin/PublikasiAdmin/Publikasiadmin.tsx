@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import {IonHeader,IonButtons,IonMenuButton,IonTitle} from '@ionic/react';
+import {IonHeader,IonButtons,IonMenuButton,IonTitle, IonPage} from '@ionic/react';
 import ToolbarAdmin from '../../../components/toolbar/toolbarAdmin';
 import MenuSlideAdmin from '../../../components/menu-Slide/menuSlideAdmin';
 import './Publikasiadmin.css';
@@ -94,7 +94,7 @@ import {
          
           <MenuSlideAdmin></MenuSlideAdmin>
     
-          
+          <IonPage className="Pub">
           <IonHeader className="pub">
             <ToolbarAdmin
               pageName="Publikasi"
@@ -103,6 +103,7 @@ import {
           </IonHeader>
     
           <MaterialReactTable table={table} />
+          </IonPage>
         </>
       );
   };
