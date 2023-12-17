@@ -12,8 +12,9 @@ import {
 } from '@ionic/react';
 import Buttons from '../../components/button/buttons';
 import { useHistory } from 'react-router-dom';
+import './LoginAdmin.css'
 
-interface FormAdminProps {}
+interface FormAdminProps { }
 
 const FormAdmin: React.FC<FormAdminProps> = () => {
   const [showAlert, setShowAlert] = useState<boolean>(false);
@@ -37,15 +38,13 @@ const FormAdmin: React.FC<FormAdminProps> = () => {
 
   return (
     <IonPage className="formAdmin">
-      <IonCard className="juduLAdmin">
-      </IonCard>
       <IonCard className="centered-card-Admin">
         <div className="login-container-Admin">
-          <div>
+          <div className='form-admin'>
             <IonCardHeader className="headerAdmin">
               <p>
                 <IonCardTitle className="tittleAdmin">
-                  <strong>{isLogin ? 'Login' : 'Admin Login'}</strong>
+                  <strong>Admin Login</strong>
                 </IonCardTitle>
               </p>
             </IonCardHeader>
@@ -56,18 +55,17 @@ const FormAdmin: React.FC<FormAdminProps> = () => {
                 </p>
                 <IonInput
                   placeholder=" Email/Username"
-                  style={{ border: '1px solid grey', width: '500px', height: '50px' }}
+                  style={{ border: '1px solid grey', width: '100%', height: '50px' }}
                 />
               </div>
               <div>
-                <br />
-                <p className="passwordAdmin">
+                <p className="passwordAdmin" style={{ marginTop: '8px' }}>
                   <strong>Password</strong>
                 </p>
                 <IonInput
                   placeholder=" Password"
                   type="password"
-                  style={{ border: '1px solid grey', width: '500px', height: '50px' }}
+                  style={{ border: '1px solid grey', width: '100%', height: '50px' }}
                 />
               </div>
               {isLogin && (
@@ -102,6 +100,9 @@ const FormAdmin: React.FC<FormAdminProps> = () => {
               message={isLogin ? 'You have successfully logged in!' : 'Admin login successful!'}
               buttons={['OK']}
             />
+          </div>
+          <div className='imageAdmin'>
+            <img src="https://png.pngtree.com/png-vector/20221124/ourmid/pngtree-recruitment-job-for-social-media-admin-png-image_6478542.png" />
           </div>
         </div>
       </IonCard>

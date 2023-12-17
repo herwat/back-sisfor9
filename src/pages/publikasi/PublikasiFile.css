@@ -9,7 +9,7 @@
   width: 500px;
   position: fixed;
   left: calc(50% - 250px);
-  top: 86px;
+  top: calc(50% - 200px)
 }
 
 .bagian {
