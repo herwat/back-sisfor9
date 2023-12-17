@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import {IonHeader} from '@ionic/react';
+import {IonHeader, IonPage} from '@ionic/react';
 import ToolbarAdmin from '../../../components/toolbar/toolbarAdmin';
 import MenuSlideAdmin from '../../../components/menu-Slide/menuSlideAdmin';
 import {
@@ -13,6 +13,7 @@ import {
   import { jsPDF } from 'jspdf'; //or use your library of choice here
   import autoTable from 'jspdf-autotable';
   import { data, type Person } from './DataMahasiswa';
+  import './DaftarMahasiswa.css';
   
   const columnHelper = createMRTColumnHelper<Person>();
   
@@ -86,7 +87,7 @@ import {
         <>
          
           <MenuSlideAdmin></MenuSlideAdmin>
-    
+          <IonPage className="MahasiswaTeknik">
           
           <IonHeader className="mahasiswa">
             <ToolbarAdmin
@@ -96,6 +97,7 @@ import {
           </IonHeader>
     
           <MaterialReactTable table={table} />
+          </IonPage>
         </>
       );
   };

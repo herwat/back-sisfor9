@@ -1,43 +1,43 @@
 export type Person = {
-   Mahasiswa: string;
+   Tamu: string;
    WaktuAkses: string;
   };
   
   export const data = [
     {
-     Mahasiswa: 'anonim', 
+     Tamu: 'anonim', 
      WaktuAkses: '20 Januari 2023',
     },
     {
-     Mahasiswa: 'anonim', 
+     Tamu: 'anonim', 
      WaktuAkses: '20 Januari 2023',
     },
     {
-     Mahasiswa: 'anonim',
+     Tamu: 'anonim',
      WaktuAkses: '21 Januari 2023',
     },
     {
-      Mahasiswa: 'anonim',
+      Tamu: 'anonim',
       WaktuAkses: '21 Januari 2023',
      },
      {
-      Mahasiswa: 'anonim',
+      Tamu: 'anonim',
       WaktuAkses: '22 Januari 2023',
      },
      {
-      Mahasiswa: 'anonim',
+      Tamu: 'anonim',
       WaktuAkses: '22 Januari 2023',
      },
      {
-      Mahasiswa: 'anonim',
+      Tamu: 'anonim',
       WaktuAkses: '22 Januari 2023',
      },
      {
-      Mahasiswa: 'anonim',
+      Tamu: 'anonim',
       WaktuAkses: '22 Januari 2023',
      },
      {
-      Mahasiswa: 'anonim',
+      Tamu: 'anonim',
       WaktuAkses: '12 februari 2023',
      },
     
